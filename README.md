@@ -1,17 +1,7 @@
-# ta9
+Aplikasi Pelaporan Fasilitas Kota diawali dengan halaman daftar laporan. Ketika aplikasi dibuka, halaman ini menampilkan seluruh laporan yang tersimpan di Hive, diurutkan berdasarkan kode laporan. Apabila belum ada data, halaman menampilkan tulisan "Belum ada laporan". Di bagian atas daftar terdapat pilihan filter status (Semua, Baru, Diproses, dan Selesai), dan pilihan terakhir yang dipakai pengguna otomatis diterapkan karena tersimpan di SharedPreferences.
 
-A new Flutter project.
+Untuk menambah laporan, pengguna menekan tombol Tambah di bagian bawah layar, sehingga halaman form terbuka. Pengguna mengisi kode laporan (misalnya SC01), jenis masalah (misalnya lampu jalan mati), dan lokasi (misalnya Jl. Melati), lalu menekan tombol Simpan. Jika ada kolom yang kosong, muncul pesan "Wajib diisi", dan jika kode sudah pernah dipakai, muncul pesan bahwa kode tersebut sudah digunakan. Apabila data valid, laporan disimpan dengan status Baru, aplikasi kembali ke halaman daftar, dan muncul pemberitahuan bahwa laporan berhasil ditambahkan.
 
-## Getting Started
+Untuk mengubah laporan, pengguna mengetuk kartu laporan pada daftar sehingga form ubah terbuka dengan data yang sudah terisi. Kolom kode tidak dapat diubah karena berfungsi sebagai kunci data, sedangkan jenis masalah, lokasi, dan status (Baru, Diproses, atau Selesai) dapat diperbarui. Setelah menekan Simpan, perubahan langsung tampil pada daftar disertai pemberitahuan bahwa laporan berhasil diperbarui.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Untuk menghapus laporan, pengguna menekan ikon tempat sampah pada kartu laporan. Aplikasi menampilkan dialog konfirmasi yang memuat kode dan jenis laporan. Jika pengguna memilih Batal, tidak ada yang berubah, tetapi jika memilih Hapus, laporan dihapus secara permanen dari Hive dan daftar langsung diperbarui disertai pemberitahuan penghapusan.
